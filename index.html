@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sydlerz.fitness | Premium 1:1 Online Coaching for Women</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,800&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN with plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#b80c5a",
+            "primary-container": "#ff4e8d",
+            "primary-hover": "#e03777",
+            "primary-fixed": "#ffd9e0",
+            "primary-fixed-dim": "#ffb1c4",
+            "on-primary-fixed": "#3f001a",
+            "secondary": "#6d5963",
+            "secondary-container": "#f6dbe7",
+            "secondary-fixed": "#f6dbe7",
+            "tertiary": "#732ee4",
+            "tertiary-container": "#a578ff",
+            "tertiary-fixed": "#eaddff",
+            "surface": "#fcf9f8",
+            "surface-dim": "#dcd9d9",
+            "surface-bright": "#fcf9f8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f6f3f2",
+            "surface-container": "#f0eded",
+            "surface-container-high": "#eae7e7",
+            "surface-container-highest": "#e5e2e1",
+            "on-surface": "#1c1b1b",
+            "on-surface-variant": "#594046",
+            "outline": "#8d7076",
+            "outline-variant": "#e0bec5",
+            "background": "#fcf9f8",
+            "on-background": "#1c1b1b"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          },
+          maxWidth: {
+            'container-max': '1280px'
+          },
+          boxShadow: {
+            'glow-sm': '0 0 20px rgba(255, 78, 141, 0.25)',
+            'glow-lg': '0 0 40px rgba(255, 78, 141, 0.35)',
+            'soft': '0 10px 30px -5px rgba(28, 27, 27, 0.05), 0 5px 15px -3px rgba(255, 78, 141, 0.05)',
+            'card': '0 15px 35px -5px rgba(184, 12, 90, 0.06), 0 5px 15px rgba(0,0,0,0.03)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fcf9f8;
+      color: #1c1b1b;
+      overflow-x: hidden;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+    }
+
+    .glass-card {
+      background: #ffffff;
+      border: 1px solid #f6dbe7;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(255, 78, 141, 0.15);
+      border-color: #ffb1c4;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ff4e8d 0%, #b80c5a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .bg-soft-gradient {
+      background: radial-gradient(circle at 75% 20%, #ffd9e0 0%, #fcf9f8 65%);
+    }
+
+    .blob-bg {
+      position: absolute;
+      filter: blur(90px);
+      opacity: 0.55;
+      z-index: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: floatSlow 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(25px, -20px) scale(1.08); }
+    }
+
+    @keyframes floatBadge {
+      0% {
+        transform: translateY(0px) scale(1);
+        box-shadow: 0 10px 25px -5px rgba(255, 78, 141, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      }
+      50% {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 20px 35px -5px rgba(255, 78, 141, 0.35), 0 12px 15px -6px rgba(0, 0, 0, 0.08);
+      }
+      100% {
+        transform: translateY(0px) scale(1);
+        box-shadow: 0 10px 25px -5px rgba(255, 78, 141, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    .animate-float-card {
+      animation: floatBadge 3.8s ease-in-out infinite;
+    }
+
+    .animate-float-card:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes pulseFlame {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.18) rotate(8deg); }
+    }
+
+    .animate-flame {
+      animation: pulseFlame 2s ease-in-out infinite;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .form-radio-custom:checked {
+      background-color: #ff4e8d;
+      border-color: #ff4e8d;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fcf9f8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ffb1c4;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff4e8d;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-sans antialiased selection:bg-primary-container selection:text-white">
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <nav class="sticky top-0 z-50 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-300">
+    <div class="max-w-container-max mx-auto px-5 sm:px-8 lg:px-16 py-4 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="group flex items-center gap-1.5 focus:outline-none">
+        <span class="text-2xl font-extrabold tracking-tight text-primary-container group-hover:opacity-90 transition-opacity">
+          sydlerz<span class="text-on-background font-black">.fitness</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-on-surface-variant">
+        <a href="#testimonials" class="hover:text-primary-container transition-colors py-1">Results</a>
+        <a href="#about" class="hover:text-primary-container transition-colors py-1">About Syd</a>
+        <a href="#faq" class="hover:text-primary-container transition-colors py-1">FAQ</a>
+      </div>
+
+      <!-- Header Action CTA -->
+      <div class="flex items-center gap-4">
+        <a href="#apply" class="inline-flex items-center justify-center bg-primary-container hover:bg-primary-hover active:scale-95 text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-md shadow-primary-container/25 transition-all duration-200">
+          Apply Now
+        </a>
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" type="button" class="md:hidden p-2 rounded-xl text-on-surface-variant hover:bg-secondary-container/40 transition-colors focus:outline-none" aria-label="Toggle navigation">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 py-5 border-t border-outline-variant/30 bg-surface/95 backdrop-blur-xl flex flex-col gap-4 text-base font-semibold text-on-surface">
+      <a href="#testimonials" class="mobile-nav-link hover:text-primary-container transition-colors">Results</a>
+      <a href="#about" class="mobile-nav-link hover:text-primary-container transition-colors">About Syd</a>
+      <a href="#faq" class="mobile-nav-link hover:text-primary-container transition-colors">FAQ</a>
+      <a href="#apply" class="mobile-nav-link mt-2 text-center bg-primary-container text-white py-3 rounded-full font-bold shadow-md">Apply Now</a>
+    </div>
+  </nav>
+
+
+  <!-- ================= HERO SECTION ================= -->
+  <header class="relative min-h-[92vh] flex items-center justify-center pt-12 pb-20 md:py-24 overflow-hidden bg-soft-gradient">
+    <!-- Ambient Glow Background Blobs -->
+    <div class="blob-bg bg-primary-container/30 w-[550px] h-[550px] top-[-80px] right-[-120px]"></div>
+    <div class="blob-bg bg-primary-fixed w-[450px] h-[450px] bottom-[5%] left-[-150px]"></div>
+    <div class="blob-bg bg-tertiary-fixed/40 w-[350px] h-[350px] top-[40%] right-[30%]"></div>
+
+    <div class="max-w-container-max mx-auto px-5 sm:px-8 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+        
+        <!-- Pill Badge -->
+        <div class="inline-flex items-center gap-2 bg-primary-fixed/80 border border-primary-fixed-dim px-4 py-2 rounded-full shadow-sm">
+          <span class="material-symbols-outlined text-primary-container text-[18px]">vital_signs</span>
+          <span class="text-xs sm:text-sm font-bold tracking-wide uppercase text-primary">Personalized Online Coaching</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.15] text-on-background">
+          Train With Someone <br>
+          <span class="gradient-text">Who Actually Knows You.</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-base sm:text-lg text-on-surface-variant max-w-xl font-normal leading-relaxed">
+          Hey, I'm Syd — a certified personal trainer since 2020. I've spent years coaching clients in person, and now I help women build muscle, lose fat, and develop a healthy relationship with food and training through 1:1 online coaching.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 pt-2 w-full sm:w-auto">
+          <a href="#apply" class="w-full sm:w-auto text-center bg-gradient-to-r from-primary-container to-primary hover:from-primary hover:to-primary-container text-white px-8 py-4 rounded-full font-bold text-base shadow-lg shadow-primary-container/25 hover:shadow-primary-container/40 active:scale-95 transition-all duration-300">
+            Apply for Coaching
+          </a>
+          <a href="#about" class="w-full sm:w-auto text-center px-8 py-4 rounded-full font-bold text-base text-on-surface bg-white/80 border border-outline-variant hover:bg-surface-container-low active:scale-95 transition-all duration-300 shadow-sm">
+            Meet Syd
+          </a>
+        </div>
+
+        <!-- Quick Trust Metrics / Feature Checklist -->
+        <div class="pt-6 border-t border-outline-variant/30 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-on-surface w-full">
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-primary-fixed flex items-center justify-center text-primary text-xs font-black shrink-0">✓</span>
+            <span>Personalized Workout Plan</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-primary-fixed flex items-center justify-center text-primary text-xs font-black shrink-0">✓</span>
+            <span>Nutrition & Macro Guidance</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-primary-fixed flex items-center justify-center text-primary text-xs font-black shrink-0">✓</span>
+            <span>Calorie & Macro Targets</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-primary-fixed flex items-center justify-center text-primary text-xs font-black shrink-0">✓</span>
+            <span>24/7 Access to Me</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Hero Visual (Coach Syd Showcase) -->
+      <div class="lg:col-span-6 relative flex flex-col items-center justify-center">
+        
+        <!-- Decorative back glow rings -->
+        <div class="absolute w-80 h-80 rounded-full bg-primary-fixed/60 blur-3xl -top-6 -right-6 pointer-events-none"></div>
+        <div class="absolute w-72 h-72 rounded-full bg-tertiary-fixed/50 blur-3xl -bottom-10 -left-6 pointer-events-none"></div>
+
+        <!-- Relative container for Image and Top Floating Badge -->
+        <div class="relative w-full max-w-[420px] z-10">
+          
+          <!-- Main Coach Showcase Frame Card -->
+          <div class="w-full bg-white rounded-[36px] p-3 sm:p-4 shadow-2xl border-4 border-white/90 transform md:rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
+            
+            <div class="relative rounded-[28px] overflow-hidden aspect-[3/4] sm:aspect-[4/5] bg-surface-container shadow-inner group">
+              <img src="hero_coach.png" alt="Coach Syd - 1:1 Personal Training" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              
+              <!-- Gradient Overlay on bottom for polished finish -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/10 pointer-events-none"></div>
+
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span class="inline-flex items-center gap-1.5 bg-primary-container text-white px-3 py-1 rounded-full text-xs font-bold shadow-md uppercase tracking-wider mb-1.5">
+                  <span class="material-symbols-outlined text-xs">verified</span> Coach Syd
+                </span>
+                <p class="text-sm font-extrabold drop-shadow">Stronger • Leaner • Confident</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Floating Success Rate Badge (Matches Screenshot) -->
+          <div class="glass-panel absolute -top-3 right-0 sm:-right-4 px-4 py-3 rounded-2xl shadow-xl z-20 flex items-center gap-3 animate-bounce" style="animation-duration: 3.5s;">
+            <div class="bg-primary-container text-white p-2 rounded-xl flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-lg">trending_up</span>
+            </div>
+            <div>
+              <p class="text-[10px] font-bold text-on-surface-variant tracking-wider uppercase">Success Rate</p>
+              <p class="text-lg font-black text-on-surface leading-tight">98%</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 1:1 Coaching Badge (Positioned Below Image) -->
+        <div class="mt-5 z-20 w-full max-w-[390px] px-2">
+          <div class="glass-panel w-full p-4 rounded-2xl shadow-xl flex items-center gap-3.5 border border-pink-200 animate-float-card transition-all cursor-pointer">
+            <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-pink-400 to-rose-500 flex items-center justify-center text-white text-xl shadow-sm shrink-0 animate-flame">
+              🔥
+            </div>
+            <div>
+              <p class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-1.5">
+                <span>1:1 Coaching</span>
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              </p>
+              <p class="text-sm font-extrabold text-on-surface">Custom Nutrition & Workouts</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= SERVICES BENTO GRID ================= -->
+  <section class="py-20 md:py-28 bg-surface-container-low relative" id="services">
+    <div class="max-w-container-max mx-auto px-5 sm:px-8 lg:px-16">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14 md:mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-on-background tracking-tight mb-4">
+          Everything You Need to Succeed
+        </h2>
+        <p class="text-base sm:text-lg text-on-surface-variant">
+          Comprehensive coaching designed to remove the guesswork from your fitness journey.
+        </p>
+      </div>
+
+      <!-- Bento Grid (4 Cards layout matching screenshot) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Personalized Workout Plan (Spans 2 columns) -->
+        <div class="md:col-span-2 glass-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary-fixed/40 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-500 pointer-events-none"></div>
+          
+          <div class="relative z-10">
+            <div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">fitness_center</span>
+            </div>
+            <h3 class="text-2xl font-bold text-on-surface mb-3">Personalized Workout Plan</h3>
+            <p class="text-base text-on-surface-variant max-w-lg leading-relaxed">
+              Tailored routines that fit your schedule, equipment, and goals. From home workouts with minimal equipment to full gym splits built for progressive overload.
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-pink-100 flex flex-wrap items-center gap-4 text-xs font-semibold text-primary">
+            <span class="bg-primary-fixed/60 px-3 py-1.5 rounded-full">Video Exercise Demos</span>
+            <span class="bg-primary-fixed/60 px-3 py-1.5 rounded-full">Form Check Feedback</span>
+            <span class="bg-primary-fixed/60 px-3 py-1.5 rounded-full">Progression Tracking</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Nutrition Guidance (Spans 1 column) -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group">
+          <div class="relative z-10">
+            <div class="w-14 h-14 rounded-2xl bg-primary-container text-white flex items-center justify-center mb-6 shadow-md shadow-primary-container/30 group-hover:rotate-6 transition-transform">
+              <span class="material-symbols-outlined text-3xl">restaurant_menu</span>
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-2">Nutrition Guidance</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Flexible dieting approaches to fuel your body and boost energy without restrictive eating, guilt, or giving up social meals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Calorie & Macro Targets (Spans 1 column) -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group">
+          <div class="relative z-10">
+            <div class="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center mb-6 shadow-md shadow-primary/30 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">pie_chart</span>
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mb-2">Calorie & Macro Targets</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Exact targets calculated for your metabolic rate and updated dynamically based on your weekly biofeedback and body composition shifts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4: 24/7 Access & Support (Spans 2 columns) -->
+        <div class="md:col-span-2 glass-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -left-10 -bottom-10 w-64 h-64 bg-tertiary-fixed/40 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-500 pointer-events-none"></div>
+
+          <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-primary mb-6">
+                <span class="material-symbols-outlined text-3xl">support_agent</span>
+              </div>
+              <h3 class="text-2xl font-bold text-on-surface mb-3">24/7 Access & Support</h3>
+              <p class="text-base text-on-surface-variant max-w-lg leading-relaxed">
+                Direct in-app messaging access for form checks, mindset support, restaurant menu guidance, and routine adjustments whenever you need them.
+              </p>
+            </div>
+
+            <div class="sm:self-end">
+              <a href="#apply" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-container text-white px-7 py-3.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200">
+                <span>Start Now</span>
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= TESTIMONIALS & RESULTS ================= -->
+  <section class="py-20 md:py-28 relative overflow-hidden bg-surface-bright" id="testimonials">
+    <!-- Center Ambient Blob -->
+    <div class="blob-bg bg-tertiary-fixed/50 w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-35"></div>
+
+    <div class="max-w-container-max mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-xl mx-auto mb-14 md:mb-16">
+        <div class="inline-flex items-center gap-2 bg-primary-fixed/60 text-primary font-bold text-xs uppercase px-3 py-1 rounded-full mb-3">
+          Proven Client Transformations
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-on-background tracking-tight">
+          Real Women. Real Results.
+        </h2>
+      </div>
+
+      <!-- Grid: Left Transformation Showcase, Right Testimonial Reviews -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Transformation Visual Side (Left: 6 cols) - Interactive Carousel -->
+        <div class="lg:col-span-6">
+          <div class="relative bg-white rounded-3xl p-3 sm:p-4 shadow-xl border border-pink-100 overflow-hidden">
+            
+            <!-- Carousel Screen Container -->
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] sm:aspect-[1/1] bg-stone-900 group shadow-sm border border-pink-100/80">
+              
+              <!-- Slide 1 -->
+              <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-500 flex items-center justify-center bg-stone-950" data-index="0">
+                <img src="transform_1.png" alt="3 Years worth of learning and consistency transformation" class="w-full h-full object-contain">
+                <div class="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Consistency &amp; Growth
+                </div>
+                <div class="absolute top-3 right-3 bg-primary-container text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                  3-Year Journey
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500 flex items-center justify-center bg-stone-950" data-index="1">
+                <img src="transform_2.jpg" alt="16 Week client transformation before and after" class="w-full h-full object-contain">
+                <div class="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Before
+                </div>
+                <div class="absolute top-3 right-3 bg-primary-container text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                  After (16 Weeks)
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500 flex items-center justify-center bg-stone-950" data-index="2">
+                <img src="transform_3.png" alt="Feb 2020 vs August 2020 6-month transformation" class="w-full h-full object-contain">
+                <div class="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Feb 2020
+                </div>
+                <div class="absolute top-3 right-3 bg-primary-container text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                  Aug 2020 (6 Months)
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500 flex items-center justify-center bg-stone-950" data-index="3">
+                <img src="transform_4.png" alt="Progressive overload and training split transformation" class="w-full h-full object-contain">
+                <div class="absolute top-3 left-3 bg-black/75 backdrop-blur-md text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Progressive Overload
+                </div>
+                <div class="absolute top-3 right-3 bg-primary-container text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                  Muscle Definition
+                </div>
+              </div>
+
+              <!-- Prev / Next Navigation Buttons -->
+              <button type="button" onclick="prevTransformSlide()" aria-label="Previous image" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 hover:bg-white text-on-surface hover:text-primary shadow-lg backdrop-blur-md flex items-center justify-center transition-all duration-200 active:scale-90 z-20">
+                <span class="material-symbols-outlined text-xl">chevron_left</span>
+              </button>
+              <button type="button" onclick="nextTransformSlide()" aria-label="Next image" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 hover:bg-white text-on-surface hover:text-primary shadow-lg backdrop-blur-md flex items-center justify-center transition-all duration-200 active:scale-90 z-20">
+                <span class="material-symbols-outlined text-xl">chevron_right</span>
+              </button>
+
+              <!-- Indicators & Counter -->
+              <div class="absolute bottom-3 left-0 right-0 flex items-center justify-between px-4 z-20 pointer-events-none">
+                <!-- Dots -->
+                <div class="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full pointer-events-auto">
+                  <button type="button" onclick="goToTransformSlide(0)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-primary-container transition-all" aria-label="Slide 1"></button>
+                  <button type="button" onclick="goToTransformSlide(1)" class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 2"></button>
+                  <button type="button" onclick="goToTransformSlide(2)" class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 3"></button>
+                  <button type="button" onclick="goToTransformSlide(3)" class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 4"></button>
+                </div>
+
+                <!-- Slide Counter -->
+                <div id="slideCounterBadge" class="bg-black/70 backdrop-blur-md text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                  1 / 4
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Transformation stat badge -->
+            <div class="mt-4 p-4 rounded-2xl bg-primary-fixed/40 border border-primary-fixed-dim flex items-center justify-around text-center">
+              <div>
+                <p class="text-lg font-black text-primary">-18 lbs</p>
+                <p class="text-[11px] font-semibold text-on-surface-variant">Body Fat Reduced</p>
+              </div>
+              <div class="w-px h-8 bg-outline-variant/40"></div>
+              <div>
+                <p class="text-lg font-black text-primary">+45 lbs</p>
+                <p class="text-[11px] font-semibold text-on-surface-variant">Squat & Deadlift</p>
+              </div>
+              <div class="w-px h-8 bg-outline-variant/40"></div>
+              <div>
+                <p class="text-lg font-black text-primary">100%</p>
+                <p class="text-[11px] font-semibold text-on-surface-variant">Confidence Gain</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Wall of Love Side (Right: 6 cols) -->
+        <div class="lg:col-span-6 flex flex-col gap-6">
+          
+          <!-- Testimonial Card 1 (Sarah J.) -->
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl shadow-card border border-pink-100 transition-transform duration-300 hover:-translate-y-1">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center font-black text-primary text-lg shadow-inner">
+                S
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-on-surface">Sarah J.</h4>
+                <div class="flex text-amber-400 text-sm gap-0.5 mt-0.5">
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-on-surface-variant text-sm sm:text-base italic leading-relaxed">
+              "Syd totally changed my relationship with food. I'm lifting heavier than ever, eating more, and finally seeing the definition I wanted. The app makes everything so easy."
+            </p>
+          </div>
+
+          <!-- Testimonial Card 2 (Emily R.) -->
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl shadow-card border border-pink-100 lg:ml-8 transition-transform duration-300 hover:-translate-y-1">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center font-black text-primary text-lg shadow-inner">
+                E
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-on-surface">Emily R.</h4>
+                <div class="flex text-amber-400 text-sm gap-0.5 mt-0.5">
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                  <span class="material-symbols-outlined text-sm text-primary-container">star</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-on-surface-variant text-sm sm:text-base italic leading-relaxed">
+              "I was so intimidated by the gym. Having exact workouts tailored to me and checking in every week gave me the accountability I needed to stay consistent."
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= ABOUT SYD SECTION ================= -->
+  <section class="py-16 md:py-24 bg-surface" id="about">
+    <div class="max-w-container-max mx-auto px-5 sm:px-8 lg:px-16">
+      <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-pink-100 shadow-soft">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Syd Avatar Profile Photo -->
+          <div class="md:col-span-4 flex flex-col items-center text-center">
+            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-tr from-primary to-primary-container p-1.5 shadow-xl group">
+              <div class="w-full h-full rounded-[22px] overflow-hidden bg-surface-container relative">
+                <img src="about_syd.jpg" alt="Coach Sydney L. - NASM Certified Personal Trainer" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-on-surface mt-4">Sydney L.</h3>
+            <p class="text-xs font-semibold text-primary uppercase">NASM-CPT • Women's Fitness Specialist</p>
+          </div>
+
+          <!-- Syd Bio Info -->
+          <div class="md:col-span-8 space-y-4">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-on-background">
+              "My mission is to help women ditch extreme diets and build real, lasting strength."
+            </h3>
+            <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+              I created <strong>sydlerz.fitness</strong> because I saw too many women stuck in endless cardio routines and calorie deprivation cycles. Fitness isn't about punishment—it's about fueling your body, feeling energized, and building physical and mental resilience.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+              <div class="p-3 bg-surface-container-low rounded-2xl text-center">
+                <p class="text-xl font-black text-primary">500+</p>
+                <p class="text-xs text-on-surface-variant font-medium">Clients Coached</p>
+              </div>
+              <div class="p-3 bg-surface-container-low rounded-2xl text-center">
+                <p class="text-xl font-black text-primary">6+ Yrs</p>
+                <p class="text-xs text-on-surface-variant font-medium">Coaching Exp</p>
+              </div>
+              <div class="p-3 bg-surface-container-low rounded-2xl text-center col-span-2 sm:col-span-1">
+                <p class="text-xl font-black text-primary">100%</p>
+                <p class="text-xs text-on-surface-variant font-medium">Customized Plans</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= COACHING APPLICATION FORM SECTION ================= -->
+  <section class="py-20 md:py-28 bg-primary-fixed/30 relative" id="apply">
+    <!-- Top & Bottom Soft Glows -->
+    <div class="blob-bg bg-primary-container/20 w-[500px] h-[500px] top-0 left-1/2 -translate-x-1/2"></div>
+
+    <div class="max-w-container-max mx-auto px-5 sm:px-8 lg:px-16 relative z-10">
+      
+      <!-- Card Container -->
+      <div class="max-w-2xl mx-auto bg-white/95 backdrop-blur-2xl p-7 sm:p-12 rounded-[32px] shadow-2xl border border-pink-100">
+        
+        <!-- Form Header -->
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-1.5 bg-primary-fixed px-3 py-1 rounded-full text-xs font-bold text-primary mb-3">
+            <span class="material-symbols-outlined text-sm">rate_review</span>
+            <span>Application Only</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-on-background tracking-tight mb-3">
+            Apply for 1:1 Personal Training
+          </h2>
+          <p class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            Ready to transform your life? Fill out the form below to see if we're a good match, and I'll get back to you personally within 24-48 hours.
+          </p>
+        </div>
+
+        <!-- Interactive Application Form -->
+        <form id="coachingForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+          
+          <!-- 1. Gender -->
+          <div class="space-y-2">
+            <label class="block text-sm font-bold text-on-surface">Gender <span class="text-primary">*</span></label>
+            <div class="flex items-center gap-6">
+              <label class="flex items-center gap-2.5 cursor-pointer text-sm font-semibold text-on-surface">
+                <input type="radio" name="gender" value="female" required checked class="w-4 h-4 text-primary-container focus:ring-primary-container border-outline-variant">
+                <span>Female</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer text-sm font-semibold text-on-surface">
+                <input type="radio" name="gender" value="male" class="w-4 h-4 text-primary-container focus:ring-primary-container border-outline-variant">
+                <span>Male</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 2. Name & Email -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label class="block text-sm font-bold text-on-surface" for="userName">Name <span class="text-primary">*</span></label>
+              <input type="text" id="userName" name="name" required placeholder="Your Name" class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all">
+            </div>
+            <div class="space-y-2">
+              <label class="block text-sm font-bold text-on-surface" for="userEmail">Email <span class="text-primary">*</span></label>
+              <input type="email" id="userEmail" name="email" required placeholder="your@email.com" class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all">
+            </div>
+          </div>
+
+          <!-- 3. Current Fitness Goals -->
+          <div class="space-y-2">
+            <label class="block text-sm font-bold text-on-surface" for="fitnessGoals">Current Fitness Goals <span class="text-primary">*</span></label>
+            <select id="fitnessGoals" name="goals" required class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all">
+              <option value="" disabled selected>Select a goal</option>
+              <option value="lose_weight">Lose weight & tone up</option>
+              <option value="build_muscle">Build muscle & gain strength</option>
+              <option value="both">Both (Body Recomposition)</option>
+              <option value="endurance">Improve overall health & endurance</option>
+            </select>
+          </div>
+
+          <!-- 4. Tell me more about your journey -->
+          <div class="space-y-2">
+            <label class="block text-sm font-bold text-on-surface" for="userStory">
+              Tell me more about your fitness journey, your goals, and why you are looking for an online coach. <span class="text-primary">*</span>
+            </label>
+            <textarea id="userStory" name="story" rows="4" required placeholder="Share where you are currently at and what has or hasn't worked for you..." class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all"></textarea>
+          </div>
+
+          <!-- 5. Workout Days Per Week -->
+          <div class="space-y-2">
+            <label class="block text-sm font-bold text-on-surface">How many days per week can you realistically workout? <span class="text-primary">*</span></label>
+            <div class="grid grid-cols-4 gap-3">
+              <label class="flex items-center justify-center p-3 rounded-xl border border-outline-variant/60 bg-surface has-[:checked]:bg-primary-fixed has-[:checked]:border-primary-container has-[:checked]:text-primary cursor-pointer font-bold text-sm transition-colors">
+                <input type="radio" name="days" value="3" required class="sr-only">
+                <span>3 Days</span>
+              </label>
+              <label class="flex items-center justify-center p-3 rounded-xl border border-outline-variant/60 bg-surface has-[:checked]:bg-primary-fixed has-[:checked]:border-primary-container has-[:checked]:text-primary cursor-pointer font-bold text-sm transition-colors">
+                <input type="radio" name="days" value="4" checked class="sr-only">
+                <span>4 Days</span>
+              </label>
+              <label class="flex items-center justify-center p-3 rounded-xl border border-outline-variant/60 bg-surface has-[:checked]:bg-primary-fixed has-[:checked]:border-primary-container has-[:checked]:text-primary cursor-pointer font-bold text-sm transition-colors">
+                <input type="radio" name="days" value="5" class="sr-only">
+                <span>5 Days</span>
+              </label>
+              <label class="flex items-center justify-center p-3 rounded-xl border border-outline-variant/60 bg-surface has-[:checked]:bg-primary-fixed has-[:checked]:border-primary-container has-[:checked]:text-primary cursor-pointer font-bold text-sm transition-colors">
+                <input type="radio" name="days" value="6" class="sr-only">
+                <span>6 Days</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 6. Physical or Dietary Restrictions -->
+          <div class="space-y-2">
+            <label class="block text-sm font-bold text-on-surface" for="restrictions">Do you have any physical or dietary restrictions?</label>
+            <textarea id="restrictions" name="restrictions" rows="2" placeholder="e.g. Lower back pain, gluten intolerance, vegetarian, none..." class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all"></textarea>
+          </div>
+
+          <!-- 7. Typical Diet in a Day -->
+          <div class="space-y-2">
+            <label class="block text-sm font-bold text-on-surface" for="dietHabits">What does your diet look like? Give me a rough idea of what you typically eat in a day? <span class="text-primary">*</span></label>
+            <textarea id="dietHabits" name="diet" rows="3" required placeholder="e.g. Breakfast: Coffee & oatmeal. Lunch: Salad or sandwich. Dinner: Chicken & rice..." class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all"></textarea>
+          </div>
+
+          <!-- 8. Tracking Calories / Macros -->
+          <div class="space-y-2">
+            <label class="block text-sm font-bold text-on-surface">Do you track calories/macros? If not would you be comfortable doing so? <span class="text-primary">*</span></label>
+            <div class="space-y-2 pt-1">
+              <label class="flex items-start gap-3 p-3 rounded-xl border border-outline-variant/40 bg-surface hover:bg-surface-container-low cursor-pointer transition-colors">
+                <input type="radio" name="tracking" value="experienced" required checked class="mt-1 w-4 h-4 text-primary-container focus:ring-primary-container border-outline-variant">
+                <span class="text-xs sm:text-sm font-medium text-on-surface">Yes I track or have tracked my calories/macros</span>
+              </label>
+              <label class="flex items-start gap-3 p-3 rounded-xl border border-outline-variant/40 bg-surface hover:bg-surface-container-low cursor-pointer transition-colors">
+                <input type="radio" name="tracking" value="willing" class="mt-1 w-4 h-4 text-primary-container focus:ring-primary-container border-outline-variant">
+                <span class="text-xs sm:text-sm font-medium text-on-surface">No I have never tracked calories/macros, but I would be comfortable doing so</span>
+              </label>
+              <label class="flex items-start gap-3 p-3 rounded-xl border border-outline-variant/40 bg-surface hover:bg-surface-container-low cursor-pointer transition-colors">
+                <input type="radio" name="tracking" value="uncomfortable" class="mt-1 w-4 h-4 text-primary-container focus:ring-primary-container border-outline-variant">
+                <span class="text-xs sm:text-sm font-medium text-on-surface">I would not be comfortable tracking my calories/macros</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 9. Height & Weight -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label class="block text-sm font-bold text-on-surface" for="userHeight">Height <span class="text-primary">*</span></label>
+              <input type="text" id="userHeight" name="height" required placeholder="e.g. 5'6&quot; or 168 cm" class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all">
+            </div>
+            <div class="space-y-2">
+              <label class="block text-sm font-bold text-on-surface" for="userWeight">Weight <span class="text-primary">*</span></label>
+              <input type="text" id="userWeight" name="weight" required placeholder="e.g. 145 lbs or 65 kg" class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all">
+            </div>
+          </div>
+
+          <!-- 10. Anything Else / Questions -->
+          <div class="space-y-2">
+            <label class="block text-sm font-bold text-on-surface" for="additionalNotes">Is there anything else that I should know about you? Or any questions you have for me?</label>
+            <textarea id="additionalNotes" name="notes" rows="3" placeholder="Any specific timeline, upcoming events, or questions for Syd..." class="w-full p-3.5 rounded-xl border border-outline-variant/60 bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-sm outline-none transition-all"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-primary-container to-primary hover:from-primary hover:to-primary-container text-white py-4 px-8 rounded-full text-base sm:text-lg font-bold shadow-lg shadow-primary-container/30 hover:shadow-primary-container/50 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+              <span>Submit Application</span>
+              <span class="material-symbols-outlined">send</span>
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= FAQ SECTION ================= -->
+  <section class="py-16 md:py-24 bg-surface" id="faq">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-on-background tracking-tight mb-3">Frequently Asked Questions</h2>
+        <p class="text-sm sm:text-base text-on-surface-variant">Everything you need to know about working with Coach Syd.</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <details class="group bg-white rounded-2xl p-5 border border-pink-100 shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-on-surface text-base list-none">
+            <span>What happens after I submit my application?</span>
+            <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-sm text-on-surface-variant leading-relaxed">
+            Syd will review your details personally to ensure online coaching is the right fit for your goals. You will receive an email within 24-48 hours with next steps and onboarding details.
+          </p>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group bg-white rounded-2xl p-5 border border-pink-100 shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-on-surface text-base list-none">
+            <span>Do I need a gym membership or can I workout at home?</span>
+            <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-sm text-on-surface-variant leading-relaxed">
+            Every plan is 100% customized to your equipment setup. Whether you have a full commercial gym, a few dumbbells at home, or resistance bands, your routine will be built to optimize your results.
+          </p>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group bg-white rounded-2xl p-5 border border-pink-100 shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-on-surface text-base list-none">
+            <span>How does the weekly check-in process work?</span>
+            <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-sm text-on-surface-variant leading-relaxed">
+            Every week you submit your progress photos, measurements, lifting numbers, and habit logs inside the coaching app. Syd sends back an in-depth video breakdown with adjustments and coaching feedback.
+          </p>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group bg-white rounded-2xl p-5 border border-pink-100 shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-on-surface text-base list-none">
+            <span>Will I have to give up my favorite foods?</span>
+            <span class="material-symbols-outlined text-primary-container transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-sm text-on-surface-variant leading-relaxed">
+            No! We use flexible dieting principles. You will learn how to hit your protein and macro targets while still enjoying social meals, vacations, and treats in moderation.
+          </p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-surface-container dark:bg-stone-900 border-t border-outline-variant/30 text-on-surface-variant">
+    <div class="max-w-container-max mx-auto px-5 sm:px-8 lg:px-16 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center justify-between">
+        
+        <!-- Brand Info (6 cols) -->
+        <div class="md:col-span-6 space-y-2">
+          <a href="#" class="text-xl font-extrabold text-primary-container tracking-tight">
+            sydlerz<span class="text-on-surface">.fitness</span>
+          </a>
+          <p class="text-xs sm:text-sm text-on-surface-variant max-w-sm">
+            Empowering women to build strength, confidence, and a sustainable lifestyle.
+          </p>
+        </div>
+
+        <!-- Footer Links (6 cols) -->
+        <div class="md:col-span-6 flex flex-wrap items-center gap-6 md:justify-end text-xs font-semibold text-on-surface-variant">
+          <a href="javascript:void(0)" onclick="openModal('privacyModal')" class="hover:text-primary-container underline transition-colors">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="openModal('termsModal')" class="hover:text-primary-container underline transition-colors">Terms of Service</a>
+          <a href="#faq" class="hover:text-primary-container underline transition-colors">FAQ</a>
+          <a href="javascript:void(0)" onclick="openModal('contactModal')" class="hover:text-primary-container underline transition-colors">Contact</a>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="mt-10 pt-6 border-t border-outline-variant/20 text-center text-xs text-on-surface-variant">
+        <p>© 2025 sydlerz.fitness. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================= SUBMISSION SUCCESS MODAL ================= -->
+  <div id="successModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl border border-pink-100 animate-in fade-in zoom-in duration-300">
+      <div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container mx-auto mb-4">
+        <span class="material-symbols-outlined text-3xl">celebration</span>
+      </div>
+      <h3 class="text-2xl font-extrabold text-on-surface mb-2">Application Received!</h3>
+      <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+        Thank you for applying! Syd has received your information and will personally review your goals. Watch your email inbox within the next 24-48 hours for next steps.
+      </p>
+      <button type="button" onclick="closeModal('successModal')" class="w-full bg-primary-container hover:bg-primary text-white py-3.5 rounded-full font-bold text-sm shadow-md transition-all">
+        Done
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ================= GENERIC MODAL TEMPLATE (Privacy, Terms, Contact) ================= -->
+  <div id="infoModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl border border-pink-100">
+      <div class="flex items-center justify-between mb-4">
+        <h3 id="infoModalTitle" class="text-xl font-bold text-on-surface">Information</h3>
+        <button type="button" onclick="closeModal('infoModal')" class="text-stone-400 hover:text-stone-700 p-1">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div id="infoModalBody" class="text-sm text-on-surface-variant leading-relaxed space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+      </div>
+      <div class="mt-6 pt-4 border-t border-pink-100">
+        <button type="button" onclick="closeModal('infoModal')" class="w-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface py-2.5 rounded-full font-bold text-sm transition-all">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= CLIENT JAVASCRIPT ================= -->
+  <script>
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Transformation Carousel Controller
+    let currentTransformIndex = 0;
+    const transformSlides = document.querySelectorAll('.carousel-slide');
+    const transformDots = document.querySelectorAll('.carousel-dot');
+    const slideCounterBadge = document.getElementById('slideCounterBadge');
+    const totalTransformSlides = transformSlides.length;
+
+    function updateTransformCarousel() {
+      transformSlides.forEach((slide, idx) => {
+        if (idx === currentTransformIndex) {
+          slide.classList.remove('opacity-0', 'pointer-events-none');
+          slide.classList.add('opacity-100');
+        } else {
+          slide.classList.add('opacity-0', 'pointer-events-none');
+          slide.classList.remove('opacity-100');
+        }
+      });
+
+      transformDots.forEach((dot, idx) => {
+        if (idx === currentTransformIndex) {
+          dot.classList.add('bg-primary-container', 'w-2.5', 'h-2.5');
+          dot.classList.remove('bg-white/50', 'w-2', 'h-2');
+        } else {
+          dot.classList.remove('bg-primary-container', 'w-2.5', 'h-2.5');
+          dot.classList.add('bg-white/50', 'w-2', 'h-2');
+        }
+      });
+
+      if (slideCounterBadge) {
+        slideCounterBadge.innerText = `${currentTransformIndex + 1} / ${totalTransformSlides}`;
+      }
+    }
+
+    function nextTransformSlide() {
+      currentTransformIndex = (currentTransformIndex + 1) % totalTransformSlides;
+      updateTransformCarousel();
+    }
+
+    function prevTransformSlide() {
+      currentTransformIndex = (currentTransformIndex - 1 + totalTransformSlides) % totalTransformSlides;
+      updateTransformCarousel();
+    }
+
+    function goToTransformSlide(index) {
+      currentTransformIndex = index;
+      updateTransformCarousel();
+    }
+
+    // Coaching form submission
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('coachingForm');
+      const submitBtn = document.getElementById('submitBtn');
+      
+      // Basic validation check
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Visual feedback on button
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = `<span class="material-symbols-outlined animate-spin text-lg">progress_activity</span> <span>Submitting...</span>`;
+      submitBtn.disabled = true;
+
+      // Simulate asynchronous submission
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        form.reset();
+        openModal('successModal');
+      }, 1000);
+    }
+
+    // Modal Helpers
+    function openModal(modalId) {
+      if (modalId === 'privacyModal') {
+        document.getElementById('infoModalTitle').innerText = 'Privacy Policy';
+        document.getElementById('infoModalBody').innerHTML = `
+          <p>Your privacy is important to us. At sydlerz.fitness, all personal wellness data, contact information, photos, and consultation notes are strictly confidential.</p>
+          <p>We do not share, sell, or distribute your email or health background with any third parties.</p>
+        `;
+        document.getElementById('infoModal').classList.remove('hidden');
+        return;
+      }
+
+      if (modalId === 'termsModal') {
+        document.getElementById('infoModalTitle').innerText = 'Terms of Service';
+        document.getElementById('infoModalBody').innerHTML = `
+          <p>By applying for personal coaching with sydlerz.fitness, you acknowledge that coaching provides guidance, programming, and accountability and does not substitute for clinical medical advice.</p>
+          <p>Commitment periods and cancellation terms are outlined in individual client agreements upon acceptance.</p>
+        `;
+        document.getElementById('infoModal').classList.remove('hidden');
+        return;
+      }
+
+      if (modalId === 'contactModal') {
+        document.getElementById('infoModalTitle').innerText = 'Contact Coach Syd';
+        document.getElementById('infoModalBody').innerHTML = `
+          <p>Have questions before applying? Reach out directly:</p>
+          <p class="font-bold text-primary">📧 coach@sydlerz.fitness</p>
+          <p class="font-bold text-primary">📷 Instagram: @sydlerz.fitness</p>
+          <p class="text-xs text-stone-500 mt-2">Response time is typically within 24 hours Monday - Friday.</p>
+        `;
+        document.getElementById('infoModal').classList.remove('hidden');
+        return;
+      }
+
+      const el = document.getElementById(modalId);
+      if (el) el.classList.remove('hidden');
+    }
+
+    function closeModal(modalId) {
+      const el = document.getElementById(modalId);
+      if (el) el.classList.add('hidden');
+    }
+
+    // Close modal when clicking on backdrop
+    window.addEventListener('click', (e) => {
+      const successModal = document.getElementById('successModal');
+      const infoModal = document.getElementById('infoModal');
+      if (e.target === successModal) closeModal('successModal');
+      if (e.target === infoModal) closeModal('infoModal');
+    });
+  </script>
+
+</body>
+</html>
